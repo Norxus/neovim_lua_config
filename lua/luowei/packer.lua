@@ -18,7 +18,25 @@ return require('packer').startup(function(use)
           require('Comment').setup()
       end
   }
-  
+
+  use {
+      "yamatsum/nvim-cursorline",
+      config = function() 
+          require("nvim-cursorline").setup {
+              cursorline = {
+                  enable = true,
+                  timeout = 1000,
+                  number = false,
+              },
+              cursorword = {
+                  enable = true,
+                  min_length = 3,
+                  hl = { underline = true },
+              }
+          }
+      end
+  } 
+
     use {
       "windwp/nvim-autopairs",
       config = function() require("nvim-autopairs").setup {
@@ -42,6 +60,7 @@ return require('packer').startup(function(use)
           },
       } end
   }
+
 
   use({
       'ellisonleao/gruvbox.nvim',
