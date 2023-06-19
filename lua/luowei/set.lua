@@ -1,7 +1,5 @@
 vim.opt.guicursor = ""
 
-vim.cmd.highlight({"Visual","guibg=darkBlue"})
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
