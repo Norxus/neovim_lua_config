@@ -41,4 +41,18 @@ lsp.on_attach(function(client, bufnr)
 	vim.keymap.set("n", "<C-h>", function () vim.lsp.buf.signature_help() end, opts)
 
 end)
+
+lsp.format_on_save({
+    format_opts = {
+        async = false,
+        timeout_ms = 10000,
+    },
+    servers = {
+        ['gopls'] = { 'go' },
+        ['lua_ls'] = { 'lua' },
+        ['rust_analyzer'] = { 'rust' },
+        ['clangd'] = { 'c', 'cpp' },
+    }
+})
+
 lsp.setup()
